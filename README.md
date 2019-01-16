@@ -1,7 +1,9 @@
 # GUIA DE FUNDAMENTOS DE BASES DE DATOS EN PLATZI
 **Una guía sobre el curso de  "Fundamentos de bases de datos" en Platzi.**
 
-**# 1. Propósito general de las Bases de Datos** 
+# 2. TEORÍA GENERAL DE BASES DE DATOS
+
+**# Propósito general de las Bases de Datos** 
 Las Bases de Datos nacieron con el propósito de almacenar información importante. Comenzaron (obviamente) en papel.
 Podríamos imaginar una Base de Datos clásica con el clásico formato de carpetas organizadas con rótulos en estantes.
 La forma de Bases de Datos tradicional sirven para almacenar en el tiempo. Pero son ineficientes a la hora de dar con la información.
@@ -28,7 +30,7 @@ SQL es un estándar, la mayoría de los comandos básicos, en cualquier tipo de 
 
 2000-Actualidad: XML, administración automatizada, analytics, big data, No SQL, InMemory, Scale Out, Systems of Engagement.
 
-# **2. Tipos de Bases de Datos y sus aplicaciones en la industria.**
+# Tipos de Bases de Datos y sus aplicaciones en la industria.
 
 *Las bases de datos existen en casi todos lados. Y sirven de manera increíble.*
 
@@ -50,7 +52,7 @@ Algunos utilizan instancias de Bases de Datos separadas en una misma arquitectur
 - Manufactura. La manufactura maneja inventarios contando la cantidad de componentes y herramientas. Las Bases de Datos son útiles para alertar cuando quedan pocos suministros de algo en específico.
 - Empresas. Donde se almacenan datos de los empleados. Rendimiento, salarios, familias habilidades.
 
-# 3. Vision general de los datos.
+#  Vision general de los datos.
 
 Un dato es algo que me va a permitir describir un objeto. Como la capacidad de un vaso, tamaño, color...
 Un dato puede ser un número, una palabra, adjetivo, característica, imágen, transacción, estadística o código.
@@ -65,10 +67,10 @@ Los datos de muchos usuarios podrían ser usados para generar información, un g
 - **Conceptual:**
 Lo primero que tengo que hacer para diseñar una base de datos es tener los conceptos sobre qué voy a diseñar.
 Tendremos 2 objetos importantes. Entidades y relaciones.
- - Entidad: Las entidades son objetos o abstracciones de un objeto, que poseen características.
- - Relación: Una relación es como se comportan esos objetos con respecto a otros objetos.
+ - **Entidad:** Las entidades son objetos o abstracciones de un objeto, que poseen características.
+ - **Relación:** Una relación es como se comportan esos objetos con respecto a otros objetos.
 
-Ejemplo de relación. Tenemos una entidad que puede ser items en una tienda. Los items tienen un código de barra, cantidad, nombre, dimensión y color.
+Ejemplo de relación. Tenemos una entidad que pueden ser items en una tienda. Los items tienen un código de barra, cantidad, nombre, dimensión y color.
 Estos items tienen un carrito de compras, cuyo carrito tiene un código y un usuario asociado. Un monto de transacción y una forma de pago.
 Un item puede estar en muchos carritos, un carrito puede tener muchos items.
 
@@ -81,8 +83,8 @@ Tendremos generalmente un diagrama lógico que me va a resolver dudas de consist
 Será como lo va a ver mi base de datos. Tiene mucho que ver con la parte inicial. Cada Base de Datos tiene sus tipos de datos puntuales.
 Es aquí donde llevamos nuestra estructura general a la forma requerida por el sistema de gestión de bases de datos que elegimos para nuestro proyecto.
 
-# 4. Tipos de Datos.
-Los datos que manejamos en las Bases de Datos son los mísmos que podemos tener en cualquier lenguaje de programación. Estos pueden ser carácteres,  números, varchar, imagen, fechas, tipos de moneda, texto, bit y decimanl.
+# Tipos de Datos.
+Los datos que manejamos en las Bases de Datos son los mísmos que podemos tener en cualquier lenguaje de programación. Estos pueden ser carácteres, números, varchar, imagen, fechas, tipos de moneda, texto, bits y decimales.
 
 La mayoría de esos datos se basan en el estandar SQL92, que es aplicable a todas las bases de datos.
 
@@ -107,7 +109,7 @@ Para las bases de datos **relacionales en SQL**: Estas Bases de Datos se pueden 
 - No SQL: Trabaja con objetos de tipo Json.
 - In-Memory: Son bases de datos que se almacenan en la memoria RAM en un formato comprimido, no relacional para facilitar tiempos de respuesta.
 
-# 5. Diferentes tipos de Bases de Datos.
+#  Diferentes tipos de Bases de Datos.
 
 ### SQL
 1. Lenguaje estructurado.
@@ -143,3 +145,28 @@ Para las bases de datos **relacionales en SQL**: Estas Bases de Datos se pueden 
 - Licenciamiento modular
 - Pago por uso a través de SAAS ó PAAS
 - Suscripción por nodos de computo
+
+# 3 - BASES DE DATOS RELACIONALES.
+
+# ¿Qué es una Entidad?.
+
+No difiere de ningún lenguaje de programación. Así como un objeto es una abstracción del mundo real. una **Entidad** es una abstracción del mundo real.
+
+Una Entidad puede ser una casa, con techos ventanas...
+Otra entidad pueden ser varias personas.
+
+Con esto tocamos un poco el tema de **Relación**, ya que una casa puede servir para más de una persona. Pero una persona necesita solo una casa.
+
+Una Entidad tendrá ciertas características. Un color, cantidad de puertas, fecha de construcción. Cuantas personas viven dentro de la casa.
+
+### Notación Barker
+
+Representaremos en Barker's a una Entidad casa como una caja.
+
+Sus atributos pueden ser obligatorios u opcionales. La entidad debe tener un ID.
+
+- Ventanas, number
+- Puertas, number
+- Color, Char (30) "Se le asigna 30 caracteres"
+- ID, number
+- Ubicación, text
