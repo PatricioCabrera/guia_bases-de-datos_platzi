@@ -1,7 +1,7 @@
 # GUIA DE FUNDAMENTOS DE BASES DE DATOS EN PLATZI
 **Una guía sobre el curso de  "Fundamentos de bases de datos" en Platzi.**
 
-# 1. Propósito general de las Bases de Datos 
+**# 1. Propósito general de las Bases de Datos** 
 Las Bases de Datos nacieron con el propósito de almacenar información importante. Comenzaron (obviamente) en papel.
 Podríamos imaginar una Base de Datos clásica con el clásico formato de carpetas organizadas con rótulos en estantes.
 La forma de Bases de Datos tradicional sirven para almacenar en el tiempo. Pero son ineficientes a la hora de dar con la información.
@@ -28,7 +28,7 @@ SQL es un estándar, la mayoría de los comandos básicos, en cualquier tipo de 
 
 2000-Actualidad: XML, administración automatizada, analytics, big data, No SQL, InMemory, Scale Out, Systems of Engagement.
 
-# 2. Tipos de Bases de Datos y sus aplicaciones en la industria.
+# **2. Tipos de Bases de Datos y sus aplicaciones en la industria.**
 
 *Las bases de datos existen en casi todos lados. Y sirven de manera increíble.*
 
@@ -80,3 +80,66 @@ Tendremos generalmente un diagrama lógico que me va a resolver dudas de consist
 - **Físico:**
 Será como lo va a ver mi base de datos. Tiene mucho que ver con la parte inicial. Cada Base de Datos tiene sus tipos de datos puntuales.
 Es aquí donde llevamos nuestra estructura general a la forma requerida por el sistema de gestión de bases de datos que elegimos para nuestro proyecto.
+
+# 4. Tipos de Datos.
+Los datos que manejamos en las Bases de Datos son los mísmos que podemos tener en cualquier lenguaje de programación. Estos pueden ser carácteres,  números, varchar, imagen, fechas, tipos de moneda, texto, bit y decimanl.
+
+La mayoría de esos datos se basan en el estandar SQL92, que es aplicable a todas las bases de datos.
+
+- Esquema: Un esquema es la estructura lógica que va a tener nuestra base de datos. Voy a tener otro tipo de objetos que no necesariamente son mis datos. Voy a poder hacer cambios que no afecten mis instancias.
+- Instancias: Es el contenido de que tiene mi base de datos en un instante de tiempo determinado. Se encontrarán mis tablas y objetos.
+
+### Lo que se espera describir para modelar una Base de Datos.
+- Datos: Debo poder saber cual es su tipo, como lo llamo.
+- Relación entre datos: Tener una relación entre entidades o entre estructuras diferentes.
+- Restricciones de los datos: Desde mi base de datos puedo frenar errores que voy a tener en mi capa de la aplicacion. Como indicar que un valor de pago no puede ser 0 o menor a 0.
+
+### Forma de hacer la descripción.
+- El lenguaje para las consultas y manipulación de datos es SQL.
+- DML (Data Manipulation Language) = Un lenguaje procedimental y declarativo. Va a ser un conjunto de instrucciones que me va a apoyar en mi proceso de la construcción de la base de datos.
+- DDL (Data Definition Language) = Especifico el esquema de la base de datos, puedo generar un diccionario de datos. Reestricciones de integridad y autorizaciones a usuarios.
+
+Para las bases de datos **relacionales en SQL**: Estas Bases de Datos se pueden ver como una planilla en excel, donde cada valor puede ser consultado con SQL para ver el detalle y de donde proviene.
+
+### Otros tipos de bases de datos.
+- Basada en objetos relacionales: Las puedo generar directamente como "clases" de Java.
+- XML: Es una estructura organizacional que en algunos casos también funciona con No SQL.
+- No SQL: Trabaja con objetos de tipo Json.
+- In-Memory: Son bases de datos que se almacenan en la memoria RAM en un formato comprimido, no relacional para facilitar tiempos de respuesta.
+
+# 5. Diferentes tipos de Bases de Datos.
+
+### SQL
+1. Lenguaje estructurado.
+2. Esquema de tablas.
+3. Integración con otros tipos de archivos.
+4. Indexación por medio de árboles: Cuando se buscan tipos de datos que no estan necesariamente estructurados en una estructura de datos se busca desde el primer dato hasta el ultimo.
+- Ejemplos: PostgreSQL, MariaDB.
+
+### No SQL
+1. Lenguaje estructurado.
+2. Esquema no estructurado.
+3. Diferente tipo de indexación, normalmente JSON.
+4. Crecimiento horizontal: Utilizan varios nodos que están conectados entre sí. Divide y vencerás "Scale Out".
+- Ejemplos: MongoDB, cassandra.
+
+### Analíticas y de BigData
+1. Lenguaje no estructurado.
+2. Integración de muchos sistemas.
+3. Sistemas tradicionales y de engagement.
+4. Principio divide y vencerás.
+- Ejemplos: Hadoop, Spark.
+
+### Basadas en aceleración
+1. Normalmente basadas In Memory.
+2. Uso de aceleradores como GPU, Flash cards, FPGAs.
+3. Estructuras diferentes por ejemplo basadas en nodos.
+4. Uso frecuente en ambientes empresariales productivos y de datawarehouse.
+- Ejemplos: Kinetica, neo4j.
+
+### **Formas de uso.**
+- On premise open source
+- Licenciamiento por cores o sockets
+- Licenciamiento modular
+- Pago por uso a través de SAAS ó PAAS
+- Suscripción por nodos de computo
