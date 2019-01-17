@@ -196,7 +196,7 @@ A continuación añadimos el atributo "Seguridad social". Para tener mas datos i
 o es opcional.
 
 **Persona**
-| ------- | ------ |
+| Atributo | Tipo de dato |
 | * ID | num | 
 | o Seguridad Social | char(15) | 
 | * Edad | num(3) (La edad se puede calcular con la fecha de nacimiento) | 
