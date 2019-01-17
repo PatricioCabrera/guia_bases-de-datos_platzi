@@ -181,7 +181,7 @@ En una casa viven varias personas, una persona vive en una casa, una casa tiene 
 
 ¿Cómo denotamos esto?
 
-![Diagrama de relaciones](Relaciones.png)
+![Diagrama de relaciones](Relaciones.jpg)
 
 Todas las casas tienen un color por lo tanto su color será obligatorio. La obligatoriedad se denota con una linea negra contínua. Sin embargo una casa no necesariamente tiene que tener personas. Tendra líneas punteadas.
 
@@ -196,6 +196,7 @@ A continuación añadimos el atributo "Seguridad social". Para tener mas datos i
 o es opcional.
 
 **Persona**
+
 | Atributo | Tipo de dato |
 | -------- | ------------ |
 | * ID | num | 
@@ -210,3 +211,67 @@ o es opcional.
 Para identificar mejor los datos se recomendaría separar el número de teléfono a una Entidad aparte. Pero se dejará para mas adelante.
 
 Esta entidad que acabamos de ver, se llama Entidad fuerte.
+
+# ¿Ya aparecieron las llaves?
+
+Las llaves sirven para abrir Entidades. Anteriormente vimos que existen atributos opcionales "o" y obligatorios "*", las llaves "#" son un elemento más allá de los datos obligatorios. Se volverá el acceso a los datos de la Entidad.
+
+| Persona | Tipo de dato |
+| -------- | ------------ |
+| # ID | num | 
+| # Seguridad Social | char(15) | 
+| * Edad | num(3) (La edad se puede calcular con la fecha de nacimiento) | 
+| * Fecha de nacimiento | timestamp | 
+| * Ocupación | char(30) | 
+| * Profesión | char (40) | 
+| * Color favorito | char(30) | 
+
+---------------------------------------------------
+
+El número de teléfono va a ser una entidad separada, ya que una persona puede tener 1 o mas números.
+
+| Teléfono | Tipo de dato |
+| -------- | ------------ |
+| # Indicativo | num (4) |
+| # Número | num (12) | 
+| o fijo | bit (booleano 1 o 0) |
+
+----------------------------------------------------
+
+Tenémos llaves primarias y llaves compuestas (foraneas fk). Estas llaves #fk no son primarias  pero si me van a permitir acceder a otra tabla, en esa otra tabla si serán las primarias.
+
+Una llave foranea tiene que ser una llave primaria de otra tabla.
+
+| Teléfono | Tipo de dato |
+| -------- | ------------ |
+| # Indicativo | num (4) |
+| # Número | num (12) | 
+| o fijo | bit (booleano 1 o 0) |
+| #fk ID | num |
+| #fk Seguridad Social | char (15) | 
+
+| Persona | Tipo de dato |
+| -------- | ------------ |
+| # ID | num | 
+| # Seguridad Social | char(15) | 
+| * Edad | num(3) (La edad se puede calcular con la fecha de nacimiento) | 
+| * Fecha de nacimiento | timestamp | 
+| * Ocupación | char(30) | 
+| * Profesión | char (40) | 
+| * Color favorito | char(30) | 
+
+![llaves foraneas](llavesforaneas.jpg)
+
+De esta forma digo que una persona puede tener 0 o varios teléfonos, pero un teléfono pertenece solo a una persona.
+
+Con la llave foránea en cada teléfono indicamos que cada teléfono pertenece a la llave primaria de una persona. Esto se hace con las tuplas.
+
+----------------------------------------------------
+
+La tupla es una instancia de los datos de la Entidad.
+
+Tupla/registro/fila: representa un objeto único de datos implícitamente estructurados en una tabla. Conjunto de esos datos en una instancia. Por ej ID: 5, Seguridad S: 6F, Indicativo: 57, Numero: 123456. La tupla seria: 5, 6F, 57, 123456.
+
+Las llaves y llaves foráneas funcionan con tuplas. La tupla de la llave foránea del teléfono debe coincidir con la llave de otra Entidad y así se identifica la relación con quien está asociada.
+
+-----------------------------------------------------
