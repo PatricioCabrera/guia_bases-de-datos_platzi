@@ -192,11 +192,11 @@ Lo principal, al crear la Entidad es la indexación. Se recomiendan números, ya
 Crearemos la Entidad "Persona". Lo primero es su ID, podría ser un DNI.
 A continuación añadimos el atributo "Seguridad social". Para tener mas datos identificadores.
 
-* es obligatorio.
+\* es obligatorio.
 o es opcional.
 
-| **Persona** |
-| ------- |
+| **Entidad fuerte** | **Persona** |
+| ------- | ------ |
 | * ID | num | 
 | o Seguridad Social | char(15) | 
 | * Edad | num(3) (La edad se puede calcular con la fecha de nacimiento) | 
