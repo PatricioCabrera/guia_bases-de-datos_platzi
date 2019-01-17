@@ -181,7 +181,7 @@ En una casa viven varias personas, una persona vive en una casa, una casa tiene 
 
 ¿Cómo denotamos esto?
 
-![Diagrama de relaciones](./Relaciones.png)
+![Diagrama de relaciones](Relaciones.png)
 
 Todas las casas tienen un color por lo tanto su color será obligatorio. La obligatoriedad se denota con una linea negra contínua. Sin embargo una casa no necesariamente tiene que tener personas. Tendra líneas punteadas.
 
@@ -195,7 +195,7 @@ A continuación añadimos el atributo "Seguridad social". Para tener mas datos i
 \* es obligatorio.
 o es opcional.
 
-| **Entidad fuerte** | **Persona** |
+| **Persona** |
 | ------- | ------ |
 | * ID | num | 
 | o Seguridad Social | char(15) | 
