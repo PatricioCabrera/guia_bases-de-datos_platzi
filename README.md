@@ -195,7 +195,7 @@ A continuación añadimos el atributo "Seguridad social". Para tener mas datos i
 \* es obligatorio.
 o es opcional.
 
-| **Persona** |
+**Persona**
 | ------- | ------ |
 | * ID | num | 
 | o Seguridad Social | char(15) | 
