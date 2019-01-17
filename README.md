@@ -325,15 +325,20 @@ Puede ser una restricción de edad para realizar pagos con tarjeta de crédito.
 Esta fecha de nacimiento me va a permitir validar si la persona es mayor a 18 o 21 años.
 
 > \> 18 años
+
 Estas restricciones también se pueden manejar desde la capa de aplicación.
 Sin embargo en la Base de Datos también lo voy a poder hacer. Y es mas seguro.
+
 > Not null
 Not null indica que un dato no puede ser nulo. Ya trabajamos anteriormente con esto en forma de "*"
+
 > Unique
 No puede haber dos campos iguales. Si existe otro me devolverá un error.
 Esto va a ser otro atributo principal de una restricción que tenemos, que es la de la llave primaria.
+
 > \#
 Además de obligatorio, es unica "Not null y Unique". Las llaves foraneas también cumplen con esta restricción.
+
 > Check
 En check voy a tener que validar que mi dato sea igual a algo, menor que o mayor que.
 Sirve para tener restricciones directas sobre la base de datos ya que a veces se me puede olvidar en mi capa de aplicación.
