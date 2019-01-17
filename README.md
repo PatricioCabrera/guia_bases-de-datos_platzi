@@ -181,7 +181,7 @@ En una casa viven varias personas, una persona vive en una casa, una casa tiene 
 
 ¿Cómo denotamos esto?
 
-![Diagrama de relaciones](./relaciones.png)
+![Diagrama de relaciones](./Relaciones.png)
 
 Todas las casas tienen un color por lo tanto su color será obligatorio. La obligatoriedad se denota con una linea negra contínua. Sin embargo una casa no necesariamente tiene que tener personas. Tendra líneas punteadas.
 
@@ -192,13 +192,20 @@ Lo principal, al crear la Entidad es la indexación. Se recomiendan números, ya
 Crearemos la Entidad "Persona". Lo primero es su ID, podría ser un DNI.
 A continuación añadimos el atributo "Seguridad social". Para tener mas datos identificadores.
 
-| Persona |
+* es obligatorio.
+o es opcional.
+
+| **Persona** |
 | ------- |
-| ID: num | 
-| Seguridad Social: char(15) | 
-| Edad: num(3) (La edad se puede calcular con la fecha de nacimiento) | 
-| Fecha de nacimiento: timestamp | 
-| Ocupación: char(30) | 
-| Profesión: char (40) | 
-| Color favorito: char(30) | 
-| Núm tel: num(10) | 
+| * ID | num | 
+| o Seguridad Social | char(15) | 
+| * Edad | num(3) (La edad se puede calcular con la fecha de nacimiento) | 
+| * Fecha de nacimiento | timestamp | 
+| o Ocupación | char(30) | 
+| o Profesión | char (40) | 
+| * Color favorito | char(30) | 
+| * Núm tel | num(10) | 
+
+Para identificar mejor los datos se recomendaría separar el número de teléfono a una Entidad aparte. Pero se dejará para mas adelante.
+
+Esta entidad que acabamos de ver, se llama Entidad fuerte.
