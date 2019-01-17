@@ -170,3 +170,35 @@ Sus atributos pueden ser obligatorios u opcionales. La entidad debe tener un ID.
 - Color, Char (30) "Se le asigna 30 caracteres"
 - ID, number
 - Ubicación, text
+
+
+Un poco mas acerca de Barker’s Notation [Aquí]: <http://www.vertabelo.com/blog/technical-articles/barkers-erd-notation>
+
+# ¿Qué es una Relación?
+
+Continuando con la explicación de las Entidades: Tendremos una casa, un color, y una persona.
+En una casa viven varias personas, una persona vive en una casa, una casa tiene un color y un color tienen varias casas.
+
+¿Cómo denotamos esto?
+
+![Diagrama de relaciones](./relaciones.png)
+
+Todas las casas tienen un color por lo tanto su color será obligatorio. La obligatoriedad se denota con una linea negra contínua. Sin embargo una casa no necesariamente tiene que tener personas. Tendra líneas punteadas.
+
+# Características o datos de una Entidad
+
+Lo principal, al crear la Entidad es la indexación. Se recomiendan números, ya que los carácteres toman mayor espacio en memoria y se tarda mas.
+
+Crearemos la Entidad "Persona". Lo primero es su ID, podría ser un DNI.
+A continuación añadimos el atributo "Seguridad social". Para tener mas datos identificadores.
+
+| Persona |
+| ------- |
+| ID: num | 
+| Seguridad Social: char(15) | 
+| Edad: num(3) (La edad se puede calcular con la fecha de nacimiento) | 
+| Fecha de nacimiento: timestamp | 
+| Ocupación: char(30) | 
+| Profesión: char (40) | 
+| Color favorito: char(30) | 
+| Núm tel: num(10) | 
