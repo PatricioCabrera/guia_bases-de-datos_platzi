@@ -350,3 +350,26 @@ Sirve para tener restricciones directas sobre la base de datos ya que a veces se
 CHECK
 \>50$
 == Country
+
+# Capas de abstracción del modelo Entidad-Relación
+
+Veremos las 3 capas de abstracción que tienen las bases de datos.
+
+![Capas de abstracción](capasabstraccion.jpg)
+
+1. **Conceptual**: Los ejemplos vistos anteriormente son de esa capa conceptual. En esta capa tendremos 3 Entidades, cada una con su llave primaria y atributos. Tendrán relaciones. Muchos a muchos y uno a muchos.
+
+Para que existan las relaciones “muchos a muchos” se necesitan llaves foráneas en las entidades.
+2. **Lógica**: Transformaremos la conceptual a la capa lógica. para poder procesar las relaciones “muchos a muchos” se las va a partir en entidades que se llaman: Entidades Débiles.
+
+Crearemos una nueva Entidad en la mitad de la Entidad 1 y 2. Que será una Entidad débil llamada Entidad 1-2. Como no puedo mantener la Entidad 1 y 2 con la relación muchos a muchos, lo que va a pasar es que la Entidad 1 se va a relacionar "1 a muchos" con la entidad Débil. Y la Entidad 2 también, 1 a muchos con la entidad Débil 1-2.
+
+La Entidad débil llevará la llave de la Entidad 1 y 2. Adicionalmente podemos tener mas parámetros. Una relación muchos a muchos que resulta en una Entidad Débil puede tener muchos atributos.
+
+Para la Entidad 3 que tiene una relación de uno a muchos, no me va a generar una nueva Entidad, pero sí un nuevo tipo de llave.
+
+La Entidad 2 sigue igual, mientras que la 3 tendrá una llave foránea que se va a llamar Entidad 2. Será la llave primaria de la Entidad padre.
+3. **Lógica** - Física: Será el paso hacia la representación que va a tener mi base de datos. A cada uno de los atributos de una Entidad se le cambiaría, por ejemplo number a integer si hablamos de MySQL.
+Los datos pasan de ser un dato caracter, y empiezan a tomar la notación del motor de bases de datos.
+Cuando convertimos a físico, las relaciones uno a muchos se convertirán en flechas.
+Al final del día el diagrama se volverá código SQL y veremos un "insert table" con ciertos atributos.
