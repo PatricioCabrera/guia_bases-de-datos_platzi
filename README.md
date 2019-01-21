@@ -427,3 +427,19 @@ Hay que revisar el tipo de dato que vamos a usar, los identificadores se pueden 
 Definimos la obligatoriedad de los datos, las llaves primarias tienen que ser obligatorias.
 
 [Ejemplo] : <https://docs.google.com/spreadsheets/d/1cuehuKppMgnEgN0OmyW0l25z0u6ynm7EFymWXmjD4gE/edit?usp=sharing>
+
+# (Paso 5, 6 y 7)
+
+**Paso 5:** Generar un diagrama conceptual (entidades, relaciones y atributos).
+Las relaciones siempre se van a hacer en 2 sentidos (A con B y B con A).
+
+**Paso 6:** Modelo lógico
+Las relaciones se hacen por medio de entidades débiles, entre las entidades relacionadas, esto es porque no podemos generar muchas llaves foráneas en ambas entidades (fuertes).
+
+En estas entidades debiles se usan ambas llaves primarias de las entidades (fuertes) que tenían relación.
+
+En las entidades debiles no debería haber tipos de datos seriales, estas tendrían que ser integer, ya que las entidades debiles no tienen forma de tener consistencia con esa serialidad.
+
+**Paso 7:** Identificar nuevos atributos que generan nuestras entidades débiles. Son atributos que podemos tener que no son sencillos de manejar en la relación muchos a muchos directamente.
+
+Por ejemplo un video en youtube puede ser visto por muchos usuarios y un usuario puede ver muchos videos, entonces creo la tabla intermedia con la relación uno a muchos con usuario y una a muchos con el video de youtube, luego en esta tabla intermedia pones un atributo timestamp para guardar cuando vio el video, otra puede ser cuantas veces vio el video, en que momento dejo de ver el video o pauso, datos que son exclusivos de la relación.
