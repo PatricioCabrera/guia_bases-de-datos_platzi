@@ -371,7 +371,59 @@ Para la Entidad 3 que tiene una relación de uno a muchos, no me va a generar un
 
 La Entidad 2 sigue igual, mientras que la 3 tendrá una llave foránea que se va a llamar Entidad 2. Será la llave primaria de la Entidad padre.
 
-3. **Lógica** - Física: Será el paso hacia la representación que va a tener mi base de datos. A cada uno de los atributos de una Entidad se le cambiaría, por ejemplo number a integer si hablamos de MySQL.
+3. **Lógica - Física**: Será el paso hacia la representación que va a tener mi base de datos. A cada uno de los atributos de una Entidad se le cambiaría, por ejemplo number a integer si hablamos de MySQL.
+
 Los datos pasan de ser un dato caracter, y empiezan a tomar la notación del motor de bases de datos.
 Cuando convertimos a físico, las relaciones uno a muchos se convertirán en flechas.
 Al final del día el diagrama se volverá código SQL y veremos un "insert table" con ciertos atributos.
+
+# (Paso 1) Identificar cuáles Entidades resuelven nuestro problema
+
+Debemos informarnos del problema que vamos a resolver. En este caso usaremos el ejemplo de una store.
+
+Identificaremos las entidades en singular como buena práctica.
+
+Paso 1: Identificar posibles entidades
+
+**Cliente** - Los clientes pueden ser los estudiantes o los que quieran acceder a comprar un objeto de merchandising.
+**Item** - Un item es cada objeto de merchandising, va a pertenecer a un lote el cual va a ser el control del inventario.
+**Método Compra** - Se refiere a la compra por medio de la p�gina, aplicación o una tienda específica.
+**Método Pago** - son las formas de pago que se van a aceptar como efectivo o tarjeta.
+**Proveedor** - Son los proveedores de los items sirve para llevar el control histórico de compras.
+**Carrito** -  así se va a llamar un paquete de uno o varios productos que tenga el cliente.
+
+# (Paso 2) Identificar Relaciones de las Entidades
+
+En este paso vamos a identificar las relaciones entre las Entidades del paso anterior que nos iban a ayudar a solucionar nuestro problema.
+
+![Paso 2](paso-2.png)
+
+# (Paso 3) unir Relaciones con Entidades
+
+![Paso 3](paso-3.png)
+
+# Correciones del paso 2 y 3
+
+En este video se corrigen las posibles redundancias que pueden ocurrir en una Base de Datos, para no caer en circulos hay que eliminar relaciones innecesarias que ya estén relacionadas con Entidades previas. A esto se le llama **principio de transitividad**
+
+# (Paso 4) Asignar Atributos a las Entidades
+
+Para hacer un buen ejercicio hay que pensar en:
+
+- ¿Que atributos voy a necesitar?
+- ¿Cual va a ser la codificación que voy a utilizar?
+- ¿Como los voy a trabajar dependiendo del tipo de dato?
+
+Hasta este punto no nos vamos a fijar en que motor de base de datos vamos a correr.
+
+El tipo de dato va a ser obligatorio o no obligatorio, dando la posibilidad de que sea nulo o no nulo (Null o Not Null en SQL).
+
+Vamos a tener un identificador único de cada tabla, una llave primaria. Mínimo una por tabla.
+
+Para hacer mas fácil las consultas hay que tener una nomenclatura para cada tabla (como AV_ para avión) y así poder referirnos a los atributos que se repiten en varias tablas (como nombre).
+
+Hay que revisar el tipo de dato que vamos a usar, los identificadores se pueden trabajar como serial, así la misma base de datos se va a encargar de que el valor de ese identificador sea único e irrepetible.
+
+Definimos la obligatoriedad de los datos, las llaves primarias tienen que ser obligatorias.
+
+[Ejemplo] : <https://docs.google.com/spreadsheets/d/1cuehuKppMgnEgN0OmyW0l25z0u6ynm7EFymWXmjD4gE/edit?usp=sharing>
