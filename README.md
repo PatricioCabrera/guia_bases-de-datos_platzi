@@ -189,7 +189,7 @@ Sus atributos pueden ser obligatorios u opcionales. La entidad debe tener un ID.
 - ID, number
 - Ubicación, text
 
-Un poco mas acerca de Barker’s Notation [Aquí]: <http://www.vertabelo.com/blog/technical-articles/barkers-erd-notation>
+Un poco mas acerca de Barker’s Notation [Aquí]:<http://www.vertabelo.com/blog/technical-articles/barkers-erd-notation>
 
 # ¿Qué es una Relación?
 
@@ -426,7 +426,7 @@ Hay que revisar el tipo de dato que vamos a usar, los identificadores se pueden 
 
 Definimos la obligatoriedad de los datos, las llaves primarias tienen que ser obligatorias.
 
-[Ejemplo] : <https://docs.google.com/spreadsheets/d/1cuehuKppMgnEgN0OmyW0l25z0u6ynm7EFymWXmjD4gE/edit?usp=sharing>
+[Ejemplo]:<https://docs.google.com/spreadsheets/d/1cuehuKppMgnEgN0OmyW0l25z0u6ynm7EFymWXmjD4gE/edit?usp=sharing>
 
 # (Paso 5, 6 y 7)
 
