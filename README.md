@@ -426,7 +426,7 @@ Hay que revisar el tipo de dato que vamos a usar, los identificadores se pueden 
 
 Definimos la obligatoriedad de los datos, las llaves primarias tienen que ser obligatorias.
 
-[Ejemplo]:<https://docs.google.com/spreadsheets/d/1cuehuKppMgnEgN0OmyW0l25z0u6ynm7EFymWXmjD4gE/edit?usp=sharing>
+[Ejemplo Aquí]:<https://docs.google.com/spreadsheets/d/1cuehuKppMgnEgN0OmyW0l25z0u6ynm7EFymWXmjD4gE/edit?usp=sharing>
 
 # (Paso 5, 6 y 7)
 
@@ -443,3 +443,15 @@ En las entidades debiles no debería haber tipos de datos seriales, estas tendr�
 **Paso 7:** Identificar nuevos atributos que generan nuestras entidades débiles. Son atributos que podemos tener que no son sencillos de manejar en la relación muchos a muchos directamente.
 
 Por ejemplo un video en youtube puede ser visto por muchos usuarios y un usuario puede ver muchos videos, entonces creo la tabla intermedia con la relación uno a muchos con usuario y una a muchos con el video de youtube, luego en esta tabla intermedia pones un atributo timestamp para guardar cuando vio el video, otra puede ser cuantas veces vio el video, en que momento dejo de ver el video o pauso, datos que son exclusivos de la relación.
+
+# (Paso 8): Construir el Diagrama del Modelo Físico
+
+En el diagrama del modelo físico las cajas que representan las entidades deben ser cuadradas y rectas mientras que en el modelo lógico deben ser curvas en los bordes.
+
+Cuando las relaciones son de 1 a muchos, en la entidad que sea 1 ponemos una flechita, esto quiere decir que una llave foránea se refiere a su llave primaria correspondiente. Ojo esta flechita no aplica para relaciones de 1-1
+
+Las llaves foráneas en entidades debiles refieren o apuntan hacia su llave primaria en entidades fuertes.
+
+En el modelo fisico cambiamos el tipo de dato conceptual a uno real de acuerdo a la base de datos en la que vamos a trabajar. (Ej: Integer).
+
+Los motores de base de datos tienen diferentes implementaciones de los tipos de datos, hay que revisar a que se traducen dependiendo de la base de datos.
